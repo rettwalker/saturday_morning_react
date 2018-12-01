@@ -1,10 +1,10 @@
-import {AuthenticateUserRequestGenerator} from './index'
+import { AuthenticateUserRequestGenerator } from './index'
 
 describe('tests the authentication', () => {
     describe('when the user attempts to login', () => {
         let requestMock
         let authenicateUser
-        beforeAll( () => {
+        beforeAll(() => {
             requestMock = jest.fn()
             authenicateUser = AuthenticateUserRequestGenerator(requestMock)
         })
@@ -15,7 +15,7 @@ describe('tests the authentication', () => {
                 "first_name": "Test",
                 "last_name": "McTester"
             })
-            return authenicateUser({email:'',password:''}).then(res => {
+            return authenicateUser({ email: '', password: '' }).then(res => {
                 expect(res).toEqual({
                     "id": 1,
                     "email": "test@email.com",
@@ -23,10 +23,10 @@ describe('tests the authentication', () => {
                     "last_name": "McTester"
                 })
                 expect(requestMock).toBeCalled()
-                expect(requestMock).toBeCalledWith('localhost:8080/api/login', {method:'POST', body: JSON.stringify({email:'',password:''})})
+                expect(requestMock).toBeCalledWith('localhost:8080/api/login', { method: 'POST', body: JSON.stringify({ email: '', password: '' }) })
             })
         })
-    }) 
+    })
     it('', () => {
         expect(AuthenticateUserRequestGenerator()).toBeInstanceOf(Function)
     })
