@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import Login from './index';
+import InputField from '../inputField'
 
 describe('tests for the login component', () => {
     let wrapper
@@ -14,21 +15,20 @@ describe('tests for the login component', () => {
     })
 
     it('render email field component', () => {
+        expect(wrapper.find(InputField).prop("name")).toBe("email")
+    })
+
+    xit('render password field component', () => {
         //expect(wrapper.find('.App')).toHaveLength(1)
         fail("todo")
     })
 
-    it('render password field component', () => {
+    xit('render submit button', () => {
         //expect(wrapper.find('.App')).toHaveLength(1)
         fail("todo")
     })
 
-    it('render submit button', () => {
-        //expect(wrapper.find('.App')).toHaveLength(1)
-        fail("todo")
-    })
-
-    it('render register button', () => {
+    xit('render register button', () => {
         //expect(wrapper.find('.App')).toHaveLength(1)
         fail("todo")
     })
