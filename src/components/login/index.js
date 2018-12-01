@@ -8,6 +8,9 @@ class Login extends Component {
             <div className="Login">
                 <InputField name="email" />
                 <InputField name="password" />
+                <button>Login</button>
+                <button>Register</button>
+                
             </div>
         )
     }

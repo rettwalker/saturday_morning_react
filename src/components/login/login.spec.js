@@ -21,13 +21,11 @@ describe('tests for the login component', () => {
         expect(wrapper.find('InputField[name="password"]')).toHaveLength(1)
     })
 
-    xit('render submit button', () => {
-        //expect(wrapper.find('.App')).toHaveLength(1)
-        fail("todo")
+    it('render submit button', () => {
+        expect(wrapper.contains(<button>Login</button>)).toBe(true)
     })
 
-    xit('render register button', () => {
-        //expect(wrapper.find('.App')).toHaveLength(1)
-        fail("todo")
+    it('render register button', () => {
+        expect(wrapper.contains(<button>Register</button>)).toBe(true)
     })
 })
