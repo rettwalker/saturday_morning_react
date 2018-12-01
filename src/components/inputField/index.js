@@ -7,7 +7,7 @@ class InputField extends Component {
         return (
             <div className="InputField">
                 <label>{this.props.name}</label>
-                <input></input>
+                <input name={this.props.name} onChange={this.props.handleChange}></input>
             </div>
         )
     }

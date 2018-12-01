@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from './components/login';
 import { AuthenticateUser } from './services/authentication';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loggedIn: false,
+      user: {}
+    }
+  }
   render() {
     return (
       <div className="App">
-        <Login submitLogin={this.submitLogin} />
+        {(this.state.loggedIn) ? "HELLO WORLD" : <Login submitLogin={this.submitLogin} />}
       </div>
     );
   }
 
   submitLogin = (user) => {
-    return AuthenticateUser(user).then((res) => { console.log('YESSSS') })
+    console.log(user)
+    return AuthenticateUser(user).then((res) => { this.setState({ loggedIn: true, user: res }) })
   }
 }
 

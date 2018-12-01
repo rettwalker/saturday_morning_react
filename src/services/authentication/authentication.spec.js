@@ -23,7 +23,7 @@ describe('tests the authentication', () => {
                     "last_name": "McTester"
                 })
                 expect(requestMock).toBeCalled()
-                expect(requestMock).toBeCalledWith('localhost:8080/api/login', { method: 'POST', body: JSON.stringify({ email: '', password: '' }) })
+                expect(requestMock).toBeCalledWith('http://localhost:8080/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: '', password: '' }) })
             })
         })
     })
