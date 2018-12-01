@@ -7,6 +7,7 @@ class Login extends Component {
         return (
             <div className="Login">
                 <InputField name="email" />
+                <InputField name="password" />
             </div>
         )
     }
